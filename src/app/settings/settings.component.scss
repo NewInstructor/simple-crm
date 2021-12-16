@@ -1,0 +1,13 @@
+:root {
+    --kb-color: silver;
+}
+
+body {
+    background: var(--kb-color);
+}
+
+.user-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

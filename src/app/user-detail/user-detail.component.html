@@ -1,0 +1,97 @@
+<div class="user-detail-container">
+    <div class="user-profile">
+        <mat-card class="user-profile-left">
+            <button mat-icon-button class="pin-right-upper-corner" [matMenuTriggerFor]="headerMenu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+
+
+            <img src="./assets/img/profile/user-man.png">
+            <div class="user-details">
+                <h1>
+                    {{ user.firstName }} {{ user.lastName }}</h1>
+                <p class="job-details">Versicherungsfuzi Hanse Merkur</p>
+
+                <p>
+                    <mat-icon>cake</mat-icon>{{ user.birthDate | date:'dd.MM.yyyy' }}</p>
+                <p>
+                    <mat-icon>mail_outline</mat-icon>{{ user.email }}</p>
+            </div>
+            <div class="user-group-container">
+                <button mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon">
+                    <mat-icon>add</mat-icon>
+                  </button>
+                <div class="user-group">
+                    Gruppe1
+                </div>
+                <div class="user-group">
+                    Gruppe2
+                </div>
+                <div class="user-group">
+                    Gruppe3
+                </div>
+            </div>
+        </mat-card>
+
+        <mat-card class="user-profile-right">
+            bla bla
+            <button mat-icon-button class="pin-right-upper-corner" [matMenuTriggerFor]="headerMenu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+        </mat-card>
+
+    </div>
+
+    <div class="user-detail-header">
+
+        <h1>Kundenakte</h1>
+        <mat-menu #headerMenu="matMenu">
+            <button mat-menu-item (click)="editUserDetail()"><mat-icon>dialpad</mat-icon>Kontakt bearbeiten</button>
+        </mat-menu>
+
+
+    </div>
+
+    <div class="mrl-16 adress-card">
+        <mat-card class="mt-32">
+            <button mat-icon-button class="pin-right-upper-corner" [matMenuTriggerFor]="addressMenu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+
+            <mat-menu #addressMenu="matMenu">
+                <button mat-menu-item (click)="editMenu()"><mat-icon>dialpad</mat-icon>Addresse bearbeiten</button>
+                <button mat-menu-item (click)="editMenu()"><mat-icon>dialpad</mat-icon>Bankdaten bearbeiten</button>
+            </mat-menu>
+
+
+            <mat-tab-group mat-align-tabs="start">
+                <mat-tab label="Adresse">
+                    <div class="tab-content">
+                        <mat-card-title>Addresse</mat-card-title>
+                        {{ user.street }} <br> {{ user.zipCode }} {{ user.city }}
+                    </div>
+
+                </mat-tab>
+                <mat-tab label="Bankdaten">
+                    <div class="tab-content">
+                        <mat-card-title>Bankdaten</mat-card-title>
+                    </div>
+                </mat-tab>
+
+                <mat-tab label="Termine">
+                    <div class="tab-content">
+                        <mat-card-title>Termine</mat-card-title>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Zahlungen">
+                    <div class="tab-content">
+                        <mat-card-title>Zahlungen</mat-card-title>
+                    </div>
+                </mat-tab>
+
+            </mat-tab-group>
+
+        </mat-card>
+
+    </div>
+</div>

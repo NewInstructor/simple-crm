@@ -1,0 +1,39 @@
+<mat-card>
+    <table class="user-table-title">
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                <mat-icon>account_circle</mat-icon> Kontakte</th>
+            <th>
+                <mat-icon>mail_outline</mat-icon> E-Mail</th>
+            <th>
+                <mat-icon>home</mat-icon> Adresse</th>
+        </tr>
+    </table>
+</mat-card>
+
+<mat-card *ngFor="let user of allUsers" [routerLink]="['/user/' + user.customIdName]">
+    <table class="user-table">
+        <tr>
+            <td> <img src="./assets/img/profile/user-man.png"> </td>
+            <td>
+                <mat-icon>person</mat-icon><b>{{ user.firstName }} {{ user.lastName }}</b>
+            </td>
+            <td>
+                <mat-icon>mail_outline</mat-icon>{{ user.email }}</td>
+            <td>
+                <mat-icon>home</mat-icon>{{ user.street }} <br> {{ user.zipCode }} {{ user.city }}</td>
+        </tr>
+    </table>
+
+
+
+
+</mat-card>
+
+
+<button (click)="openDialog()" matTooltip="Nutzer hinzufügen" class="add-user-btn" mat-fab color="primary">
+    <mat-icon>add</mat-icon>
+  </button>
