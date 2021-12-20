@@ -75,8 +75,15 @@
              width: 60px;
              height: 60px;
              border-radius: 100%;
-             border: solid 1px rgba(0, 0, 0, 0.4);
+             border: solid 3px #8D99E0;
              object-fit: cover;
          }
      }
+ }
+ 
+ .user-delete {
+     position: absolute;
+     right: 6px;
+     top: 6px;
+     z-index: 99;
  }

@@ -32,4 +32,14 @@ allUsers = []
 this.dialog.open(DialogAddUserComponent);
   }
 
+
+deleteUser() {
+  this.firestore
+      .collection('users')
+      .doc.(this.users[].customIdName)
+      .delete()
+      .then(() =>{
+      });
+}
+
 }

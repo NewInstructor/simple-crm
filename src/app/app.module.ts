@@ -33,6 +33,8 @@ import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-ad
 import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatRadioModule} from '@angular/material/radio';
+import { AnalyticsComponent } from './analytics/analytics.component';
+import { UserGroupComponent } from './user-group/user-group.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import {MatRadioModule} from '@angular/material/radio';
     UserDetailComponent,
     SettingsComponent,
     DialogEditAddressComponent,
-    DialogEditUserComponent
+    DialogEditUserComponent,
+    AnalyticsComponent,
+    UserGroupComponent
   ],
   imports: [
     BrowserModule,

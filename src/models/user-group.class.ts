@@ -1,4 +1,4 @@
-export class userGroup {
+export class UserGroup {
 groupName: string;
 groupColor: string;
 groupUsers: string;

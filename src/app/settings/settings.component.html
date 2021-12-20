@@ -2,32 +2,14 @@
     <mat-card class="mt-32">
 
         <mat-tab-group mat-align-tabs="start">
-            <mat-tab label="Adresse">
-                <div class="tab-content">
-                    <mat-card-title class="mt-32">Nutzer</mat-card-title>
-                    fsafsa
-                    <input type="color">
-                </div>
 
-            </mat-tab>
+
+            <!-- Settings UserGroups -->
             <mat-tab label="Kontaktgruppen">
+
+
                 <div class="tab-content">
-                    <mat-card-title class="mt-32">Kontaktgruppen</mat-card-title>
-
-
-                    <div mat-dialog-content class="user-group">
-                        <div>
-                            <mat-form-field class="mr-16 mt-32" appearance="outline">
-                                <mat-label>Kontaktgruppen</mat-label>
-                                <input [(ngModel)]="group.groupName" matInput placeholder="Kontaktgruppe">
-                                <mat-icon matSuffix matTooltip="Kontaktgruppe hinzufügen">palette
-                                </mat-icon>
-                            </mat-form-field>
-                        </div>
-                        <button matTooltip="Kontaktgruppe hinzufügen" class="btn" mat-raised-button (click)="addGroup()" color="primary">Kontaktgruppe hinzufügen</button>
-                    </div>
-
-                    <div>{{ group.groupName }}</div>
+                    <app-user-group></app-user-group>
 
                 </div>
 

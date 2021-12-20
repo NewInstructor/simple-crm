@@ -1,0 +1,29 @@
+<mat-card-title class="mt-32">
+    Kontaktgruppen</mat-card-title>
+
+
+<div mat-dialog-content class="user-group">
+    <div>
+        <mat-form-field class="mr-16 mt-32" appearance="outline">
+            <mat-label>Kontaktgruppen</mat-label>
+            <input [(ngModel)]="group.groupName" matInput placeholder="Kontaktgruppe">
+            <!--
+                                <mat-icon matSuffix matTooltip="Kontaktgruppe hinzufügen">palette
+                                </mat-icon>
+                                -->
+
+        </mat-form-field>
+        <input type="color">
+    </div>
+    <button matTooltip="Kontaktgruppe hinzufügen" class="btn" mat-raised-button (click)="addGroup()" color="primary">Kontaktgruppe hinzufügen</button>
+</div>
+<div class="group-list mt-32 mb-32">
+    <h2>Bestehende Kontaktgruppen</h2>
+    <div class="single-group" *ngFor="let group of allGroups">{{ group.groupName }}
+        <div>
+            <mat-icon matSuffix matTooltip="Kontaktgruppe löschen">delete
+            </mat-icon>
+            <mat-icon matSuffix matTooltip="Kontaktgruppe bearbeiten">more_vert</mat-icon>
+        </div>
+    </div>
+</div>

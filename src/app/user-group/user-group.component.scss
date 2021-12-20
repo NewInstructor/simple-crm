@@ -1,0 +1,24 @@
+.user-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.single-group {
+    border-radius: 5px;
+    background-color: cadetblue;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    color: white;
+    cursor: pointer;
+    mat-icon {
+        align-items: center;
+    }
+}
