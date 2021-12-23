@@ -12,4 +12,11 @@ export class AnalyticsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+/*
+sumUsers(allUsers){ 
+  let sum = allUsers.length
+  alert(allUsers.length);
+}
+*/
+  
 }

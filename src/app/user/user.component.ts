@@ -13,6 +13,7 @@ export class UserComponent implements OnInit {
 
 user = new User();
 allUsers = []
+userId = '';
 
   constructor(public dialog: MatDialog, private firestore: AngularFirestore) { }
   
@@ -33,12 +34,14 @@ this.dialog.open(DialogAddUserComponent);
   }
 
 
-deleteUser() {
+deleteUser(customIdName) {
+  console.log(customIdName);
   this.firestore
       .collection('users')
-      .doc.(this.users[].customIdName)
+      .doc(customIdName)
       .delete()
       .then(() =>{
+        
       });
 }
 

@@ -13,6 +13,8 @@ user: User;
 userId: string;
 loading = false;
 birthDate: Date;
+phone: string;
+gender: string;
 
 
   constructor(public dialogRef: MatDialogRef<DialogEditUserComponent>, private firestore: AngularFirestore ) { }

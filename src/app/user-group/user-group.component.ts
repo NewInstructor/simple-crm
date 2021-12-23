@@ -17,7 +17,7 @@ export class UserGroupComponent implements OnInit {
   constructor(private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
-    this.firestore.collection('groups').valueChanges({idField: 'groupId'})
+    this.firestore.collection('groups').valueChanges({idField: 'customIdName'})
     .subscribe(results => {
       this.allGroups = results.map( r => new UserGroup(r))
       console.log(this.allGroups); 
@@ -26,7 +26,6 @@ export class UserGroupComponent implements OnInit {
       
     }
     
-  
     
     addGroup() {
     console.log('Current group is', this.group);
@@ -38,18 +37,24 @@ export class UserGroupComponent implements OnInit {
         
       });
     }
-   /*
-    deleteGroup(){
+   
+    toggleColorPicker(colorPicker){
+      colorPicker.click();
+    }
+
+
+
+    deleteGroup(groupId){
+      console.log(groupId);
+      
       this.firestore
       .collection('groups')
-      .doc.(groupId)
+      .doc(groupId)
       .delete()
       .then((result: any) =>{
         console.log(result);
       });
-
-      */
     }
 
-
+  }
 
