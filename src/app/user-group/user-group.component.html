@@ -23,7 +23,8 @@
         <div>
             <mat-icon (click)="deleteGroup(group.groupId)" matSuffix matTooltip="Kontaktgruppe löschen">delete
             </mat-icon>
-            <mat-icon matSuffix matTooltip="Kontaktgruppe bearbeiten">more_vert</mat-icon>
+
+            <mat-icon (click)="openEditGroup()" matSuffix matTooltip="Kontaktgruppe bearbeiten">more_vert</mat-icon>
         </div>
     </div>
 </div>

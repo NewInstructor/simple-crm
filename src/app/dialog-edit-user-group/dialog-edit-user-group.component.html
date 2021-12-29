@@ -1,0 +1,34 @@
+<div class="dialog-container">
+
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+    <h1 mat-dialog-title>Kontaktgruppe bearbeiten</h1>
+    <div mat-dialog-content>
+
+        <!-- ## Edit userGroup ## -->
+        <div class="single-group" [ngStyle]="{'background-color' : group.groupColor}">{{ group.groupName }}
+        </div>
+        <div>
+            <mat-form-field class="mr-16 mt-32" appearance="outline">
+                <mat-label>Kontaktgruppen</mat-label>
+
+
+
+                <input [disabled]="loading" [(ngModel)]="groupName" matInput placeholder="Kontaktgruppe">
+
+                <mat-icon style="cursor: pointer;" (click)="toggleColorPicker(colorPicker)" matSuffix matTooltip="Farbe auswählen">palette
+                </mat-icon>
+                <input [disabled]="loading" [(ngModel)]="groupColor" #colorPicker [hidden]="true" type="color">
+
+            </mat-form-field>
+
+        </div>
+
+
+
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="dialogRef.close()">Cancel</button>
+        <button mat-button (click)="saveGroup()">Save</button>
+    </div>
+</div>

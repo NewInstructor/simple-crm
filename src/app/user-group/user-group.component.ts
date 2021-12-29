@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserGroup } from 'src/models/user-group.class';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { FsService } from '../fs.service';
+import {MatDialog} from '@angular/material/dialog';
+import { DialogEditUserGroupComponent } from '../dialog-edit-user-group/dialog-edit-user-group.component';
 
 @Component({
   selector: 'app-user-group',
@@ -14,7 +17,7 @@ export class UserGroupComponent implements OnInit {
   groupId = '';
 
 
-  constructor(private firestore: AngularFirestore) { }
+  constructor(public dialog: MatDialog, private firestore: AngularFirestore, public fs: FsService) { }
 
   ngOnInit(): void {
     this.firestore.collection('groups').valueChanges({idField: 'customIdName'})
@@ -22,8 +25,7 @@ export class UserGroupComponent implements OnInit {
       this.allGroups = results.map( r => new UserGroup(r))
       console.log(this.allGroups); 
       console.log(results); 
-    })
-      
+    });
     }
     
     
@@ -55,6 +57,13 @@ export class UserGroupComponent implements OnInit {
         console.log(result);
       });
     }
+
+    openEditGroup() {
+      const dialog = this.dialog.open(DialogEditUserGroupComponent);
+      dialog.componentInstance.group = new UserGroup(this.group.toJSON());
+      dialog.componentInstance.groupId = this.groupId;
+        }
+
 
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FsService } from '../fs.service';
 
 @Component({
   selector: 'app-analytics',
@@ -7,16 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnalyticsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public fs: FsService) { }
 
   ngOnInit(): void {
   }
 
-/*
-sumUsers(allUsers){ 
-  let sum = allUsers.length
-  alert(allUsers.length);
-}
-*/
   
 }

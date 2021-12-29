@@ -3,6 +3,10 @@ import {MatDialog} from '@angular/material/dialog';
 import { User } from 'src/models/user.class';
 import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.component';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { FsService } from '../fs.service';
+import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.component';
+
+
 
 @Component({
   selector: 'app-user',
@@ -15,17 +19,11 @@ user = new User();
 allUsers = []
 userId = '';
 
-  constructor(public dialog: MatDialog, private firestore: AngularFirestore) { }
+  constructor(public dialog: MatDialog, private firestore: AngularFirestore, public fs: FsService) { }
   
 
   ngOnInit(): void {
-    this.firestore
-    .collection('users')
-    .valueChanges({idField: 'customIdName'})
-    .subscribe((changes: any) => {
-      console.log('Received changes from DB', changes); 
-      this.allUsers = changes;
-    });
+
   }
 
 

@@ -35,6 +35,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatRadioModule} from '@angular/material/radio';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { UserGroupComponent } from './user-group/user-group.component';
+import { DialogEditUserGroupComponent } from './dialog-edit-user-group/dialog-edit-user-group.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { UserGroupComponent } from './user-group/user-group.component';
     DialogEditAddressComponent,
     DialogEditUserComponent,
     AnalyticsComponent,
-    UserGroupComponent
+    UserGroupComponent,
+    DialogEditUserGroupComponent
   ],
   imports: [
     BrowserModule,

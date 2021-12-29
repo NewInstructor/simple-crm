@@ -16,7 +16,7 @@
     </table>
 </mat-card>
 
-<mat-card *ngFor="let user of allUsers">
+<mat-card *ngFor="let user of fs.allUsers">
 
 
     <table class="user-table" [routerLink]="['/user/' + user.customIdName]">
@@ -25,13 +25,27 @@
             <td>
                 <mat-icon>person</mat-icon><b>{{ user.firstName }} {{ user.lastName }}</b>
             </td>
-            <td>
-                <mat-icon>mail_outline</mat-icon>{{ user.email }}</td>
-            <td>
-                <mat-icon>home</mat-icon>{{ user.street }} <br> {{ user.zipCode }} {{ user.city }}</td>
+            <td style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center;">
+                <div style="display: flex; align-items: center; margin-bottom: 6px;">
+                    <mat-icon>mail_outline</mat-icon>{{ user.email }}
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <mat-icon>phone</mat-icon> {{ user.phone }}
+                </div>
+            </td>
+
+            <td style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center;">
+                <div style="display: flex; align-items: center; margin-bottom: 6px;">
+                    {{ user.street }}
+                </div>
 
 
+                <div style="display: flex; align-items: center;">
+                    {{ user.zipCode }} {{ user.city }}
+                </div>
+            </td>
         </tr>
+
 
     </table>
 
