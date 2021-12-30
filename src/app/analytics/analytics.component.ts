@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FsService } from '../fs.service';
+import { GroupService } from '../group.service';
 
 @Component({
   selector: 'app-analytics',
@@ -8,7 +9,7 @@ import { FsService } from '../fs.service';
 })
 export class AnalyticsComponent implements OnInit {
 
-  constructor(public fs: FsService) { }
+  constructor(public groupService: GroupService, public userService: FsService) { }
 
   ngOnInit(): void {
   }

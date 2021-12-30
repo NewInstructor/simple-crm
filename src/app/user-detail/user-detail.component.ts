@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/models/user.class';
 import { DialogEditAddressComponent } from '../dialog-edit-address/dialog-edit-address.component';
 import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.component';
+import { FsService } from '../fs.service';
 
 @Component({
   selector: 'app-user-detail',
@@ -18,7 +19,8 @@ user: User = new User();
 
 
   constructor(private route:ActivatedRoute, 
-    private firestore: AngularFirestore, 
+    private fs: FsService,
+private firestore: AngularFirestore, 
     public dialog: MatDialog) { }
 
   ngOnInit(): void {

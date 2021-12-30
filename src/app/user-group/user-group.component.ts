@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FsService } from '../fs.service';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogEditUserGroupComponent } from '../dialog-edit-user-group/dialog-edit-user-group.component';
+import { GroupService } from '../group.service';
 
 @Component({
   selector: 'app-user-group',
@@ -17,7 +18,7 @@ export class UserGroupComponent implements OnInit {
   groupId = '';
 
 
-  constructor(public dialog: MatDialog, private firestore: AngularFirestore, public fs: FsService) { }
+  constructor(public dialog: MatDialog, private firestore: AngularFirestore, public fs: FsService, public groupService: GroupService) { }
 
   ngOnInit(): void {
     this.firestore.collection('groups').valueChanges({idField: 'customIdName'})

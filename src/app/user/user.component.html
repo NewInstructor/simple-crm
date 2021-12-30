@@ -22,8 +22,12 @@
     <table class="user-table" [routerLink]="['/user/' + user.customIdName]">
         <tr>
             <td> <img src="./assets/img/profile/user-man.png"> </td>
-            <td>
-                <mat-icon>person</mat-icon><b>{{ user.firstName }} {{ user.lastName }}</b>
+            <td style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center;">
+                <div style="display: flex; align-items: center; margin-bottom: 6px;">Frau</div>
+
+                <div style="display: flex; align-items: center;">
+                    <b>{{ user.firstName }} {{ user.lastName }}</b>
+                </div>
             </td>
             <td style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center;">
                 <div style="display: flex; align-items: center; margin-bottom: 6px;">
